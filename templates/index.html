@@ -23,6 +23,10 @@
 
     <script src="{{ STATIC_URL }}js/libs/d3.v2.min.js"></script>
     
+    <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
+    <script src="{{ STATIC_URL }}js/libs/OpenLayers-2.12/OpenLayers.js"></script>
+
+    <script src="{{ STATIC_URL }}js/GeoDAT.map.js"></script>
     <script src="{{ STATIC_URL }}js/main.js"></script>
     
 {% endblock %}
@@ -32,45 +36,71 @@
 
 {% block main %}
     {% block header %}
-    <div id="header" class="navbar">
+    <div id="header" class="navbar  navbar-static-top navbar-inverse">
         <div class="navbar-inner">
-            <div class="container">
-                <a class="brand" href="#">GeoDeliberator</a>
-                <!--
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                -->
-                <ul class="nav pull-right">
-                    <li><p class="navbar-text" id="user_name"></p></li>
-                    <li class="divider-vertical"></li>
-                    <li><a href="#">Sign In</a></li>
-                </ul>
-                
+            <a class="brand" href="#">GeoDeliberator</a>
+            <ul class="nav pull-right">
+                <li><p class="navbar-text" id="user_banner"></p></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">Sign In</a></li>
+            </ul>                
 
-            </div>
         </div>
     </div>
 
     {% endblock header%}
     
     {% block content %}
-    <div id="content_center">   
+    <div id="content">   
+        <div class="center" id="map_view">
+
+        </div>
+        <div class="east">east</div>
+        <!-- put the top toolbar to the last to fix the drop-down problem.
+        http://layout.jquery-dev.net/documentation.cfm#Drop-Downs -->
+        <div class="north navbar navbar-static-top" id="main_toolbar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Select Forum <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu" id="forum_list">
+                            <li class="nav-header">Public</li>
+                            <li><a href="#">Forum 1</a></li>
+                            <li class="divider"></li>
+                            <li class="nav-header">Private</li>
+                            <li><a href="#">Forum 2</a></li>
+                            <li><a href="#">Forum 3</a></li>
+                        </ul>
+                    </li>    
+                </ul>
+                
+                        <div class="nav btn-toolbar">
+                        <div class="btn-group">
+                            <button type="button" class="btn" disabled>Forum Info</button>
+                            <button type="button" class="btn" disabled>Timeline</button>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn" disabled>History</button>
+                            <button type="button" class="btn" disabled>Bookmarks</button>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn" disabled>Contribute</button>
+                            <button type="button" class="btn" disabled>Manage</button>
+                        </div>
+                        </div>
+                    
+            </div>
+        </div>
         
     </div>
     
-    <div id="content_east"> 
-        
-    </div>
     {% endblock content %}
     
     {% block footer %}
     <div id="footer">
-        <p >© 2010-2012 The Pennsylvania State University.</p>
+        <p>© 2010-2012 The Pennsylvania State University.</p>
     </div>
     {% endblock footer %}
 {% endblock %}

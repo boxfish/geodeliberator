@@ -12,14 +12,18 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
+    #'default': {
+    #    'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+    #    'NAME': 'geodeliberator',                      # Or path to database file if using sqlite3.
+    #    'USER': 'postgres',                      # Not used with sqlite3.
+    #    'PASSWORD': '309ist',                  # Not used with sqlite3.
+    #    # 'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
+    #    'HOST': '130.203.151.146',
+    #    'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+    #},
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'geodeliberator',                      # Or path to database file if using sqlite3.
-        'USER': 'postgres',                      # Not used with sqlite3.
-        'PASSWORD': '309ist',                  # Not used with sqlite3.
-        # 'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
-        'HOST': '130.203.151.146',
-        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'test.db'               # Or path to database file if using sqlite3.
     }
 }
 
@@ -93,7 +97,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'geodeliberator.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
