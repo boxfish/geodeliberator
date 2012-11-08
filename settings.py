@@ -1,10 +1,12 @@
+import os
 # Django settings for geodeliberator project.
+PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('Bo Yu', 'byu@ist.psu.edu'),
 )
 
 MANAGERS = ADMINS
@@ -15,8 +17,9 @@ DATABASES = {
         'NAME': 'geodeliberator',                      # Or path to database file if using sqlite3.
         'USER': 'postgres',                      # Not used with sqlite3.
         'PASSWORD': '309ist',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        # 'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
+        'HOST': '130.203.151.146',
+        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -25,7 +28,7 @@ DATABASES = {
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/New_York'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -54,8 +57,23 @@ MEDIA_URL = ''
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
 #ADMIN_MEDIA_PREFIX = '/media/'
-ADMIN_MEDIA_PREFIX = '/geodeliberator/admin_media/'
+#ADMIN_MEDIA_PREFIX = '/geodeliberator/admin_media/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
+#STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
+
+STATIC_URL = '/static/'
+
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_PATH, 'static'),
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    #'compressor.finders.CompressorFinder',
+)
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'geodeliberatoruvi65z@wmg&9497f*(9go!m7i+ur-n'
@@ -81,6 +99,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+	os.path.join(PROJECT_PATH, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -90,9 +109,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
-    
+    'django.contrib.staticfiles',
     'south',
     
     'django.contrib.gis',
-    'geodeliberator.geoannotator',
+    'api',
 )

@@ -1,4 +1,6 @@
-Django==1.2.1
-South==0.7.1
+Django
+South
 psycopg2
 BeautifulSoup
+python-dateutil==1.5
+numpy

@@ -1,0 +1,27 @@
+Server REST API
+===============
+
+* user/
+	userId
+
+* forum/
+	forumId
+
+* authentication/
+	userName, password
+
+* annotations/
+	userId, groupId, start, limit, footprintId, ownerOnly, startDate, endDate, bbox
+
+* annotation/
+	new, delete, userId, groupId, annotationId
+
+* map/
+	userId, annotationId, commentId, issueId, groupId
+
+* Timeline/
+	userId, groupId, unit, startDate, endDate
+
+* Threads/
+	annotationId, userId, groupId
+

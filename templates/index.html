@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block page_title %}GeoDeliberator{% endblock %}
+{% block css %}
+    
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" />  
+    
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/smoothness/jquery-ui-1.9.1.custom.min.css" />
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+    
+{% endblock %}
+
+{% block javascript %}
+
+    <script src="{{ STATIC_URL }}js/libs/jquery-1.8.2.js"></script>
+    <script src="{{ STATIC_URL }}js/libs/jquery-ui-1.9.1.custom.min.js"></script>
+    <script src="{{ STATIC_URL }}js/libs/jquery.json-2.3.min.js"></script>
+    <script src="{{ STATIC_URL }}js/libs/jquery.layout-latest.min.js"></script>
+    <script src="{{ STATIC_URL }}js/plugins.js"></script>
+
+    <script src="{{ STATIC_URL }}js/libs/bootstrap.min.js"></script>
+
+    <script src="{{ STATIC_URL }}js/libs/d3.v2.min.js"></script>
+    
+    <script src="{{ STATIC_URL }}js/main.js"></script>
+    
+{% endblock %}
+
+<!-- Hide the body, and load it after all the panels are loaded. -->
+{% block body_class %}invisible{% endblock %}
+
+{% block main %}
+    {% block header %}
+    <div id="header" class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="#">GeoDeliberator</a>
+                <!--
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                -->
+                <ul class="nav pull-right">
+                    <li><p class="navbar-text" id="user_name"></p></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#">Sign In</a></li>
+                </ul>
+                
+
+            </div>
+        </div>
+    </div>
+
+    {% endblock header%}
+    
+    {% block content %}
+    <div id="content_center">   
+        
+    </div>
+    
+    <div id="content_east"> 
+        
+    </div>
+    {% endblock content %}
+    
+    {% block footer %}
+    <div id="footer">
+        <p >© 2010-2012 The Pennsylvania State University.</p>
+    </div>
+    {% endblock footer %}
+{% endblock %}

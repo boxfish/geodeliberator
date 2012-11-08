@@ -1,0 +1,159 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation &mdash; GeoDeliberator 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="GeoDeliberator 2.0 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to GeoDeliberator’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to GeoDeliberator’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">GeoDeliberator 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Install virtualenvwrapper</dt>
+<dd><p class="first last">Follow instruction: <a class="reference external" href="http://virtualenvwrapper.readthedocs.org/en/latest/">http://virtualenvwrapper.readthedocs.org/en/latest/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Create a new virtualenv</dt>
+<dd><p class="first last"><tt class="docutils literal"><span class="pre">mkvirtualenv</span> <span class="pre">geodeliberator</span></tt></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Install dependencies</dt>
+<dd><p class="first"><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></tt></p>
+<dl class="last docutils">
+<dt>Detail description of dependencies:</dt>
+<dd><ul class="first last simple">
+<li>Django: the web framework in Python</li>
+<li>South: a Django middleware for easy database migration</li>
+<li>psycopg2: PostgreSQL database driver in Python</li>
+<li>BeautifulSoup: a library for hmtl/xml processing</li>
+<li>python-dateutil: extensions to the standard datetime module</li>
+<li>numpy: dependency for gdal</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Install Geospatial libraries</dt>
+<dd><p class="first"><tt class="docutils literal"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">gdal</span></tt></p>
+<p class="last"><a class="reference external" href="https://docs.djangoproject.com/en/dev/ref/contrib/gis/install/geolibs/">https://docs.djangoproject.com/en/dev/ref/contrib/gis/install/geolibs/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Setup up postgresql database in settings.py</dt>
+<dd><ul class="first last simple">
+<li>&#8216;HOST&#8217;: &#8216;130.203.151.146&#8217;,</li>
+<li>&#8216;PORT&#8217;: &#8216;5432&#8217;,</li>
+<li>&#8216;USER&#8217;: &#8216;postgres&#8217;,</li>
+<li>&#8216;PASSWORD&#8217;: &#8216;309ist&#8217;,</li>
+<li>&#8216;NAME&#8217;: &#8216;geodeliberator&#8217;</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Run the development server</dt>
+<dd><p class="first last"><tt class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></tt></p>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to GeoDeliberator&#8217;s documentation!</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/install.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to GeoDeliberator’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">GeoDeliberator 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Bo Yu.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
