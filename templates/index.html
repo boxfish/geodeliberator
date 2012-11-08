@@ -52,8 +52,15 @@
     
     {% block content %}
     <div id="content">   
-        <div class="center" id="map_view">
-
+        <div class="center">
+            <div class="pane center">
+                <div class="pane_title">Map View</div>
+                <div class="pane_menu">
+                    <span class="item"  id="btn_change_intention">Test</span>
+                </div>
+                <div class="pane_content ui-layout-content" id="map_view"></div>
+            </div>
+            <div class="south">timeline</div>    
         </div>
         <div class="east">east</div>
         <!-- put the top toolbar to the last to fix the drop-down problem.

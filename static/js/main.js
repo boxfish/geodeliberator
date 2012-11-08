@@ -26,7 +26,7 @@ function initMainLayout() {
 };
 
 function initContentLayout() {
-    mainLayout = $('#content').layout({
+    contentLayout = $('#content').layout({
         name: "contentLayout",
         applyDefaultStyles: false,
         north__paneSelector: ".north",
@@ -40,7 +40,18 @@ function initContentLayout() {
 
         east__paneSelector: ".east",
         east__size: 350
-    });    
+    });
+
+    $('#content .center').layout({
+        name: "contentCenterLayout",
+        applyDefaultStyles: false,
+        
+        center__paneSelector: ".center",
+
+        south__paneSelector: ".south",
+        south__size: 300
+
+    });
 };
 
 function initGDMap() {

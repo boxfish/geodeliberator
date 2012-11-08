@@ -13,3 +13,79 @@ body { font-size: 0.8em;}
 #main_toolbar {
 	overflow: visible;
 }
+
+/* Panes */
+.pane {
+    /*
+    border-radius: 9px;
+    -webkit-box-shadow: 2px 2px 8px #888888;
+    box-shadow: 2px 2px 8px #888888;
+
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #BBB;
+    */
+    overflow: hidden !important;
+    padding: 0 !important;
+}
+
+.pane_title {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAYCAIAAADF1mwTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGFJREFUeNrs1dEJACEMBFHvsP9C7CXFSBBBknhF3NfATgcPsqSPMRq5594rgAACkAFVxQZEBBtwzmED9t5swFqLDXB3NmDOiQb0zGQD6H9AAAE0Yp2QAL96G7xuZmjAJ8AAFChCof7t9cIAAAAASUVORK5CYII=);
+    background-position:left top;
+    background-repeat:repeat-x;
+    display:block;
+    height: 21px;
+    overflow:hidden;    
+    bottom 0;
+    padding-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight:bold;
+}
+
+
+.pane_menu {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAYCAIAAADF1mwTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGFJREFUeNrs1dEJACEMBFHvsP9C7CXFSBBBknhF3NfATgcPsqSPMRq5594rgAACkAFVxQZEBBtwzmED9t5swFqLDXB3NmDOiQb0zGQD6H9AAAE0Yp2QAL96G7xuZmjAJ8AAFChCof7t9cIAAAAASUVORK5CYII=);
+    background-position:left top;
+    background-repeat:repeat-x;
+    display:block;
+    height: 24px;
+    width: 100%;
+    overflow:hidden;
+    position:relative;
+    padding-top: 0px;
+    margin-bottom: 0px;
+}
+
+.pane_menu .item {
+    margin-left: -1px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    float: left;
+    z-index: 1;
+    border: 1px solid #aaaaaa;
+    padding-top: 3px;
+    padding-left: 5px;
+    padding-right: 7px;
+    padding-bottom: 1px;
+    font-weight:bold;
+}
+
+.pane_menu .selected, .pane_menu .item:hover, .pane_menu .itemright:hover {
+     background-color: #dadada;
+        cursor: pointer;
+}
+
+.pane_menu .with_icon {
+     background-position: 4px center;
+    background-repeat: no-repeat;
+    padding-left:24px !important;
+    height:16px;
+}
+
+.pane_content {
+    padding: 5px 5px 5px 5px; /* extra paddingTop being added by scrollpane? */
+    overflow-x: auto;
+    height: auto;
+}

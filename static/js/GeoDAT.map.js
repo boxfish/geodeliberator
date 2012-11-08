@@ -66,8 +66,7 @@ function GD_Map(selector, o){
         // Animated zoom (if supported by GMaps on your device)
         for (var i=map.layers.length-1; i>=0; --i) {
             map.layers[i].animationEnabled = this.checked;
-        }        
-        alert(map);
+        }
     };
     
     function reset() {
