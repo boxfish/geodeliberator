@@ -42,7 +42,7 @@
             <ul class="nav pull-right">
                 <li><p class="navbar-text" id="user_banner"></p></li>
                 <li class="divider-vertical"></li>
-                <li><a href="#">Sign In</a></li>
+                <li><a href="#" id="signInOut">Sign In</a></li>
             </ul>                
 
         </div>
@@ -52,17 +52,82 @@
     
     {% block content %}
     <div id="content">   
-        <div class="center">
-            <div class="pane center">
-                <div class="pane_title">Map View</div>
-                <div class="pane_menu">
-                    <span class="item"  id="btn_change_intention">Test</span>
+        <div class="center" id="content-center">
+            <div class="center">
+                <div class="pane center">
+                    <div class="pane_title">Map View</div>
+                    <div class="pane_menu nav btn-toolbar">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-small">test</button>
+                            <button type="button" class="btn btn-small">test 2</button>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-small">test 3</button>
+                            <button type="button" class="btn btn-small">test 4</button>
+                        </div>
+                    </div>
+                    <div class="pane_content ui-layout-content" id="map_view"></div>
                 </div>
-                <div class="pane_content ui-layout-content" id="map_view"></div>
+                <div class="south pane">
+                    <div class="pane_title">Timeline</div>
+                    <div class="pane_menu nav btn-toolbar">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-small">test</button>
+                            <button type="button" class="btn btn-small">test 2</button>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-small">test 3</button>
+                            <button type="button" class="btn btn-small">test 4</button>
+                        </div>
+                    </div>
+                    <div class="pane_content ui-layout-content" id="timeline_view"></div>
+                </div>    
             </div>
-            <div class="south">timeline</div>    
+            <div class="east pane">
+                <div class="pane_title">Annotation List</div>
+                <div class="pane_menu nav btn-toolbar">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-small">test</button>
+                        <button type="button" class="btn btn-small">test 2</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-small">test 3</button>
+                        <button type="button" class="btn btn-small">test 4</button>
+                    </div>
+                </div>
+                <div class="pane_content ui-layout-content" id="anno_list_view"></div>
+            </div>    
         </div>
-        <div class="east">east</div>
+        <div class="east" id="content-east">
+            <div class="center pane" id="test">
+                <div class="pane_title">Annotation Info</div>
+                <div class="pane_menu nav btn-toolbar">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-small">test</button>
+                        <button type="button" class="btn btn-small">test 2</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-small">test 3</button>
+                        <button type="button" class="btn btn-small">test 4</button>
+                    </div>
+                </div>
+                <div class="pane_content ui-layout-content" id="anno_info_view"></div>
+            </div>
+            <div class="south pane">
+                <div class="pane_title">Contribute</div>
+                <div class="pane_menu nav btn-toolbar">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-small">test</button>
+                        <button type="button" class="btn btn-small">test 2</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-small">test 3</button>
+                        <button type="button" class="btn btn-small">test 4</button>
+                    </div>
+                </div>
+                <div class="pane_content ui-layout-content" id="contribute_view"></div>
+            </div>    
+        </div>
         <!-- put the top toolbar to the last to fix the drop-down problem.
         http://layout.jquery-dev.net/documentation.cfm#Drop-Downs -->
         <div class="north navbar navbar-static-top" id="main_toolbar">
@@ -82,27 +147,53 @@
                         </ul>
                     </li>    
                 </ul>
-                
-                        <div class="nav btn-toolbar">
-                        <div class="btn-group">
-                            <button type="button" class="btn" disabled>Forum Info</button>
-                            <button type="button" class="btn" disabled>Timeline</button>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn" disabled>History</button>
-                            <button type="button" class="btn" disabled>Bookmarks</button>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn" disabled>Contribute</button>
-                            <button type="button" class="btn" disabled>Manage</button>
-                        </div>
-                        </div>
-                    
+                <div class="nav btn-toolbar" id="forum_tb">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary btn-small" id="forum_info" data-toggle="button"><i class="icon-white icon-info-sign"></i> Forum Info</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-info btn-small" id="forum_timeline" data-toggle="button"><i class="icon-white icon-calendar"></i> Timeline</button>
+                        <button type="button" class="btn btn-info btn-small" id="forum_annotations" data-toggle="button"><i class="icon-white icon-list"></i> Annotations</button>
+                        <button type="button" class="btn btn-info btn-small" id="forum_contribute" data-toggle="button"><i class="icon-white icon-pencil"></i> Contribute</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success btn-small" id="forum_my_annotations"><i class="icon-white icon-heart"></i> My Annotations</button>
+                        <button type="button" class="btn btn-success btn-small" id="forum_history"><i class="icon-white icon-time"></i> History</button>
+                        <button type="button" class="btn btn-success btn-small" id="forum_bookmarks"><i class="icon-white icon-bookmark"></i> Bookmarks</button>
+                    </div>
+                </div>
             </div>
         </div>
         
     </div>
     
+    <div id="logInModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="logInModalTitle" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="logInModalTitle">Sign In</h3>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="inputUserName">User Name</label>
+                    <div class="controls">
+                        <input type="text" id="inputUserName" placeholder="User Name">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Password</label>
+                    <div class="controls">
+                        <input type="password" id="inputPassword" placeholder="Password">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-primary" id="sign_in_btn">Sign In</button>
+        </div>
+    </div>
+
     {% endblock content %}
     
     {% block footer %}
