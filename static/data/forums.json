@@ -1,1 +1,18 @@
-{"participating": [{"id": "1", "name": "Smoke-Free Campus"}, {"id": "2", "name": "Smoke-Free Project"}], "public": [{"id": "6", "name": "West Campus Land Use"}]}
+{
+    "participating": [
+        {
+            "id": "1",
+            "name": "Smoke-Free Campus"
+        },
+        {
+            "id": "2",
+            "name": "Smoke-Free Project"
+        }
+    ],
+    "public": [
+        {
+            "id": "6",
+            "name": "West Campus Land Use"
+        }
+    ]
+}

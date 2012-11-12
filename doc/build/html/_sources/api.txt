@@ -2,7 +2,24 @@ Server REST API
 ===============
 
 * user/
-	userId
+    * description: get the information about the user
+	* parameters: userId
+    * returns: id, userName, email, first_name, last_name; id='-1' if user does not exist
+
+* forums/
+    * description: get the list of forums for a user
+    * parameters: userId
+    * returns: {participating: [{id, name}], public: [{id, name}]}
+
+* timeline/
+    * description: get the timeline data, i.e. the counts of annotations for each time unit
+    * parameters: userId, forumId, unit (hour, day, week, month, year), startDate, endDate
+    * returns: {timeline: [{count, month}], ealrliesData, latestDate}
+
+* annotations/
+    * description: list of annotations
+    * parameters: userId, forumId, start, limit, footprintId, ownerOnly, startDate, endDate, bbox
+    * returns: {totalCount, annotations: [{userName, forumId, timeCreated, excerpt, userId, content, shareLevel, timeUpdated, type, id}]}
 
 * forum/
 	forumId
@@ -10,8 +27,6 @@ Server REST API
 * authentication/
 	userName, password
 
-* annotations/
-	userId, groupId, start, limit, footprintId, ownerOnly, startDate, endDate, bbox
 
 * annotation/
 	new, delete, userId, groupId, annotationId
@@ -19,8 +34,6 @@ Server REST API
 * map/
 	userId, annotationId, commentId, issueId, groupId
 
-* Timeline/
-	userId, groupId, unit, startDate, endDate
 
 * Threads/
 	annotationId, userId, groupId
